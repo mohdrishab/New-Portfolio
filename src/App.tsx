@@ -4,7 +4,6 @@ import {
   ArrowUpRight, 
   Github, 
   Linkedin, 
-  Twitter, 
   Mail, 
   ExternalLink, 
   Code2, 
@@ -456,8 +455,17 @@ export default function App() {
                       <span className="text-xl font-medium">mohammedrishab222@gmail.com</span>
                     </a>
                     <div className="flex space-x-4 pt-8">
-                      {[Github, Linkedin, Twitter].map((Icon, i) => (
-                        <a key={i} href="#" className="w-14 h-14 rounded-full border border-black/5 flex items-center justify-center hover:bg-black hover:text-white transition-all">
+                      {[
+                        { Icon: Github, href: "https://github.com/mohdrishab" },
+                        { Icon: Linkedin, href: "https://in.linkedin.com/in/mohammad-rishab-67b42b383" }
+                      ].map(({ Icon, href }, i) => (
+                        <a 
+                          key={i} 
+                          href={href} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="w-14 h-14 rounded-full border border-black/5 flex items-center justify-center hover:bg-black hover:text-white transition-all"
+                        >
                           <Icon className="w-6 h-6" />
                         </a>
                       ))}
