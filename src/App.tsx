@@ -264,7 +264,7 @@ export default function App() {
             >
               <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-purple-600 mb-6">About Me</h2>
               <h3 className="text-5xl md:text-6xl font-display font-bold tracking-tighter leading-tight mb-8">
-                Crafting digital experiences at the intersection of <span className="text-purple-600">design</span> and <span className="text-blue-600">intelligence</span>.
+                Build and design something smart , which bring peace
               </h3>
               <p className="text-lg text-black/60 leading-relaxed mb-12 max-w-xl">
                 I'm a multidisciplinary developer and automation expert focused on building high-performance systems that solve real-world problems. With a background in IoT and a passion for workflow optimization, I bring a unique perspective to every project.
@@ -449,11 +449,11 @@ export default function App() {
                     Let's build<br />something<br /><span className="text-purple-600">extraordinary</span>.
                   </h3>
                   <div className="space-y-6">
-                    <a href="mailto:hello@mohammedrishab.dev" className="flex items-center space-x-4 group">
+                    <a href="mailto:mohammedrishab222@gmail.com" className="flex items-center space-x-4 group">
                       <div className="w-12 h-12 rounded-full border border-black/5 flex items-center justify-center group-hover:bg-black group-hover:text-white transition-colors">
                         <Mail className="w-5 h-5" />
                       </div>
-                      <span className="text-xl font-medium">hello@mohammedrishab.dev</span>
+                      <span className="text-xl font-medium">mohammedrishab222@gmail.com</span>
                     </a>
                     <div className="flex space-x-4 pt-8">
                       {[Github, Linkedin, Twitter].map((Icon, i) => (
