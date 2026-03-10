@@ -54,12 +54,12 @@ const projects = [
 const skills = [
   { name: "Automation", icon: <Rocket className="w-5 h-5" />, items: ["N8N", "Workflow Design", "API Integration", "Automation"] },
   { name: "IoT", icon: <Cpu className="w-5 h-5" />, items: ["Arduino", "ESP32", "Sensors", "MQTT"] },
-  { name: "Web", icon: <Palette className="w-5 h-5" />, items: ["React", "Tailwind CSS", "Shopify", "WordPress"] },
-  { name: "Development", icon: <Code2 className="w-5 h-5" />, items: ["Python", "Express", "MongoDB", "Redis"] }
+  { name: "Web", icon: <Palette className="w-5 h-5" />, items: ["React", "HTML", "CSS", "JS", "WordPress", "Shopify"] },
+  { name: "Development", icon: <Code2 className="w-5 h-5" />, items: ["Python", "System Design", "Logic Building"] }
 ];
 
 const techStack = [
-  "Python", "React", "Automation", "Shopify", "WordPress", "N8N", "IoT"
+  "Python", "React", "HTML", "CSS", "JS", "Automation", "Shopify", "WordPress", "N8N", "IoT"
 ];
 
 const experience = [
