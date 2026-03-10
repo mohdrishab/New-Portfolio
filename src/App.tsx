@@ -234,64 +234,88 @@ export default function App() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-32 px-6 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <div className="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl shadow-purple-500/10">
-                <img 
-                  src="https://picsum.photos/seed/profile/800/1000" 
-                  alt="Profile" 
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <div className="absolute -bottom-10 -right-10 w-48 h-48 glass rounded-3xl p-6 hidden md:block">
-                <div className="text-4xl font-display font-bold mb-2">5+</div>
-                <div className="text-xs font-bold uppercase tracking-widest text-black/50">Years of Experience</div>
-              </div>
-            </motion.div>
+        <section id="about" className="py-32 px-6 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full -z-10 opacity-5">
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600 rounded-full blur-[120px]" />
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600 rounded-full blur-[120px]" />
+          </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-purple-600 mb-6">About Me</h2>
-              <h3 className="text-5xl md:text-6xl font-display font-bold tracking-tighter leading-tight mb-8">
-                Build and design something smart , which bring peace
-              </h3>
-              <p className="text-lg text-black/60 leading-relaxed mb-12 max-w-xl">
-                I'm a multidisciplinary developer and automation expert focused on building high-performance systems that solve real-world problems. With a background in IoT and a passion for workflow optimization, I bring a unique perspective to every project.
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {skills.map((skill, i) => (
-                  <motion.div
-                    key={skill.name}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="lg:col-span-5 sticky top-32"
+              >
+                <div className="relative group">
+                  <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden">
+                    <motion.img 
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.6 }}
+                      src="https://picsum.photos/seed/profile/800/1000" 
+                      alt="Profile" 
+                      className="w-full h-full object-cover"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
+                    whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    className="p-6 glass rounded-2xl"
+                    transition={{ delay: 0.5, type: "spring" }}
+                    className="absolute -bottom-6 -right-6 w-40 h-40 bg-white p-6 rounded-3xl shadow-2xl border border-black/5 flex flex-col justify-center items-center text-center"
                   >
-                    <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 mb-4">
-                      {skill.icon}
-                    </div>
-                    <h4 className="font-bold mb-2">{skill.name}</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {skill.items.map(item => (
-                        <span key={item} className="text-[10px] font-bold uppercase tracking-wider text-black/40">{item}</span>
-                      ))}
-                    </div>
+                    <div className="text-5xl font-display font-bold text-purple-600">5+</div>
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-black/40 mt-2">Years of Experience</div>
                   </motion.div>
-                ))}
+                </div>
+              </motion.div>
+
+              <div className="lg:col-span-7">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <h2 className="text-sm font-bold uppercase tracking-[0.4em] text-purple-600 mb-8 inline-block border-b-2 border-purple-600/20 pb-2">About Me</h2>
+                  <h3 className="text-5xl md:text-7xl font-display font-bold tracking-tighter leading-[0.9] mb-10">
+                    Building <span className="text-purple-600">Smart</span> Systems for a Better World
+                  </h3>
+                  <p className="text-xl text-black/60 leading-relaxed mb-16 max-w-2xl font-medium">
+                    I'm a multidisciplinary developer and automation expert focused on building high-performance systems that solve real-world problems. With a background in IoT and a passion for workflow optimization, I bring a unique perspective to every project.
+                  </p>
+                </motion.div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {skills.map((skill, i) => (
+                    <motion.div
+                      key={skill.name}
+                      initial={{ opacity: 0, y: 40 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.15, duration: 0.6 }}
+                      whileHover={{ y: -10 }}
+                      className="p-8 bg-white border border-black/5 rounded-[2rem] shadow-sm hover:shadow-xl hover:shadow-purple-500/5 transition-all duration-500 group"
+                    >
+                      <div className="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 mb-6 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-500">
+                        {skill.icon}
+                      </div>
+                      <h4 className="text-xl font-bold mb-4">{skill.name}</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {skill.items.map(item => (
+                          <span key={item} className="px-3 py-1 bg-black/5 rounded-full text-[10px] font-bold uppercase tracking-wider text-black/60 group-hover:bg-purple-50 group-hover:text-purple-600 transition-colors duration-500">
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 
@@ -378,26 +402,78 @@ export default function App() {
         </section>
 
         {/* Tech Stack */}
-        <section id="stack" className="py-32 px-6 overflow-hidden">
-          <div className="max-w-7xl mx-auto text-center mb-20">
-            <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-purple-600 mb-6">Tech Stack</h2>
-            <h3 className="text-5xl font-display font-bold tracking-tighter">Tools of the Trade</h3>
+        <section id="stack" className="py-32 relative overflow-hidden bg-black text-white">
+          {/* Background Effects */}
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#ffffff10_1px,transparent_1px)] [background-size:40px_40px]" />
           </div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-600/10 rounded-full blur-[120px] -z-10" />
 
-          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-            {techStack.map((tech, i) => (
-              <motion.span
-                key={tech}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+          <div className="relative z-10">
+            <div className="max-w-7xl mx-auto text-center mb-24 px-6">
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                whileHover={{ scale: 1.05, backgroundColor: "#000", color: "#fff" }}
-                className="px-8 py-4 bg-white border border-black/5 rounded-full text-sm font-bold uppercase tracking-widest cursor-default transition-colors"
+                className="text-sm font-bold uppercase tracking-[0.5em] text-purple-400 mb-6"
               >
-                {tech}
-              </motion.span>
-            ))}
+                Tech Stack
+              </motion.h2>
+              <motion.h3 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-6xl md:text-8xl font-display font-bold tracking-tighter"
+              >
+                Tools of the Trade
+              </motion.h3>
+            </div>
+
+            {/* Marquee Rows */}
+            <div className="space-y-8">
+              {/* Row 1: Left Moving */}
+              <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+                <motion.div
+                  animate={{ x: ["0%", "-50%"] }}
+                  transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                  className="flex flex-none gap-8 pr-8"
+                >
+                  {[...techStack, ...techStack].map((tech, i) => (
+                    <div
+                      key={i}
+                      className="px-12 py-8 bg-white/5 border border-white/10 rounded-[2rem] flex items-center space-x-6 hover:border-purple-500/50 hover:bg-white/10 transition-all duration-300 group min-w-[280px]"
+                    >
+                      <div className="w-14 h-14 rounded-2xl bg-purple-600/20 flex items-center justify-center text-purple-400 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-500">
+                        <Code2 className="w-6 h-6" />
+                      </div>
+                      <span className="text-xl font-display font-bold uppercase tracking-widest whitespace-nowrap">{tech}</span>
+                    </div>
+                  ))}
+                </motion.div>
+              </div>
+
+              {/* Row 2: Right Moving */}
+              <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+                <motion.div
+                  animate={{ x: ["-50%", "0%"] }}
+                  transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+                  className="flex flex-none gap-8 pr-8"
+                >
+                  {[...techStack.slice().reverse(), ...techStack.slice().reverse()].map((tech, i) => (
+                    <div
+                      key={i}
+                      className="px-12 py-8 bg-white/5 border border-white/10 rounded-[2rem] flex items-center space-x-6 hover:border-purple-500/50 hover:bg-white/10 transition-all duration-300 group min-w-[280px]"
+                    >
+                      <div className="w-14 h-14 rounded-2xl bg-purple-600/20 flex items-center justify-center text-purple-400 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-500">
+                        <Code2 className="w-6 h-6" />
+                      </div>
+                      <span className="text-xl font-display font-bold uppercase tracking-widest whitespace-nowrap">{tech}</span>
+                    </div>
+                  ))}
+                </motion.div>
+              </div>
+            </div>
           </div>
         </section>
 
